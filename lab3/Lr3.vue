@@ -552,12 +552,6 @@ export default {
       fragmentShader: fragmentShader
     }
   },
-  methods: {
-    getSizeForTorus() {
-      console.log(this.sizeMultiply, this.torusUp.size)
-      return this.sizeMultiply + this.torusUp.size
-    }
-  }
 }
 </script>
 
