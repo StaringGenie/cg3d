@@ -551,7 +551,7 @@ export default {
       vertexShader: vertexShader,
       fragmentShader: fragmentShader
     }
-  },
+  }
 }
 </script>
 
