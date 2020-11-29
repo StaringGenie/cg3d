@@ -11,10 +11,86 @@
                   :color="`rgb(${uniforms.redColor.value}, ${uniforms.greenColor.value}, ${uniforms.blueColor.value})`"
                   :specular="`rgb(200, 100, 100)`"
                   shininess="100"
+
+              />
+            <vgl-mesh-phong-material
+                  name="matRed"
+                  :color="`rgb(${uniforms.redColor.value}, ${uniforms.greenColor.value}, ${uniforms.blueColor.value})`"
+                  :specular="`rgb(200, 100, 50)`"
+                  shininess="80"
+                  map="redTexture"
+              />
+               <vgl-mesh-phong-material
+                  name="matBlue"
+                  :color="`rgb(${uniforms.redColor.value}, ${uniforms.greenColor.value}, ${uniforms.blueColor.value})`"
+                  :specular="`rgb(200, 100, 50)`"
+                  shininess="80"
+                  map="blueTexture"
+              />
+               <vgl-mesh-phong-material
+                  name="matGlass"
+                  :color="`rgb(${uniforms.redColor.value}, ${uniforms.greenColor.value}, ${uniforms.blueColor.value})`"
+                  :specular="`rgb(200, 100, 50)`"
+                  shininess="80"
+                  map="glassTexture"
+              />
+               <vgl-mesh-phong-material
+                  name="matGreen"
+                  :color="`rgb(${uniforms.redColor.value}, ${uniforms.greenColor.value}, ${uniforms.blueColor.value})`"
+                  :specular="`rgb(200, 100, 50)`"
+                  shininess="80"
+                  map="greenTexture"
+              />
+               <vgl-mesh-phong-material
+                  name="matYellow"
+                  :color="`rgb(${uniforms.redColor.value}, ${uniforms.greenColor.value}, ${uniforms.blueColor.value})`"
+                  :specular="`rgb(200, 100, 50)`"
+                  shininess="80"
+                  map="yellowTexture"
               />
               <vgl-mesh-standard-material
                   name="std"
                   color="#aaaacc"
+              />
+              <vgl-texture
+                  src="/red.jpg"
+                  anisotropy="4"
+                  min-filter="linear"
+                  wrap-s="mirrored-repeat"
+                  wrap-t="mirrored-repeat"
+                  name="redTexture"
+              />
+               <vgl-texture
+                  src="/blue.jpg"
+                  anisotropy="4"
+                  min-filter="linear"
+                  wrap-s="mirrored-repeat"
+                  wrap-t="mirrored-repeat"
+                  name="blueTexture"
+              />
+               <vgl-texture
+                  src="/green.jpg"
+                  anisotropy="4"
+                  min-filter="linear"
+                  wrap-s="mirrored-repeat"
+                  wrap-t="mirrored-repeat"
+                  name="greenTexture"
+              />
+               <vgl-texture
+                  src="/yellow.jpg"
+                  anisotropy="4"
+                  min-filter="linear"
+                  wrap-s="mirrored-repeat"
+                  wrap-t="mirrored-repeat"
+                  name="yellowTexture"
+              />
+               <vgl-texture
+                  src="/glass.jpg"
+                  anisotropy="4"
+                  min-filter="linear"
+                  wrap-s="mirrored-repeat"
+                  wrap-t="mirrored-repeat"
+                  name="glassTexture"
               />
               
              
@@ -67,8 +143,9 @@
             :height-segments="cylinderHeightSegments"
           ></vgl-box-geometry>
 
+
                 <vgl-mesh
-            material="mat"
+            material="matRed"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -77,7 +154,7 @@
           />
 
           <vgl-mesh
-            material="mat"
+            material="matYellow"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -86,7 +163,7 @@
           />
 
           <vgl-mesh
-            material="mat"
+            material="matYellow"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -95,7 +172,7 @@
           />
 
           <vgl-mesh
-            material="mat"
+            material="matBlue"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -104,7 +181,7 @@
           />
 
              <vgl-mesh
-            material="mat"
+            material="matBlue"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -113,7 +190,7 @@
           />
 
           <vgl-mesh
-            material="mat"
+            material="matGreen"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -122,7 +199,7 @@
           />
 
           <vgl-mesh
-            material="mat"
+            material="matGreen"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -133,7 +210,7 @@
           
 
           <vgl-mesh
-            material="mat"
+            material="matRed"
             name="sphereMesh"
             geometry="sphere"
             cast-shadow receive-shadow
@@ -142,7 +219,7 @@
           />
 
            <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="cylinderMesh"
             geometry="cylinder"
             cast-shadow receive-shadow
@@ -150,7 +227,7 @@
             :rotation="`${figures.cylinder.rotation.x} ${figures.cylinder.rotation.y} ${figures.cylinder.rotation.z} XYZ`"
           ></vgl-mesh>
            <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="cylinderMesh"
             geometry="cylinder"
             cast-shadow receive-shadow
@@ -158,7 +235,7 @@
             :rotation="`${figures.cylinder.rotation.x} ${figures.cylinder.rotation.y} ${figures.cylinder.rotation.z} XYZ`"
           ></vgl-mesh>
           <vgl-mesh
-            material="mat"
+            material="matYellow"
             name="cylinderMesh"
             geometry="cylinder"
             cast-shadow receive-shadow
@@ -166,7 +243,7 @@
             :rotation="`${figures.cylinder.rotation.x} ${figures.cylinder.rotation.y} ${figures.cylinder.rotation.z} XYZ`"
           ></vgl-mesh>
            <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="cylinderMesh"
             geometry="cylinder"
             cast-shadow receive-shadow
@@ -175,7 +252,7 @@
           ></vgl-mesh>
            
           <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="boxMesh"
             geometry="boxZ"
             cast-shadow receive-shadow
@@ -184,7 +261,7 @@
           ></vgl-mesh>
 
           <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="boxMesh"
             geometry="boxZ"
             cast-shadow receive-shadow
@@ -193,7 +270,7 @@
           ></vgl-mesh>
 
           <vgl-mesh
-            material="mat"
+            material="matRed"
             name="boxMesh"
             geometry="boxZ"
             cast-shadow receive-shadow
@@ -202,7 +279,7 @@
           ></vgl-mesh>
 
           <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="boxMesh"
             geometry="boxZ"
             cast-shadow receive-shadow
@@ -211,7 +288,7 @@
           ></vgl-mesh>
 
           <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="boxMesh"
             geometry="boxX"
             cast-shadow receive-shadow
@@ -219,7 +296,7 @@
             :rotation="`${figures.container.rotation.x} ${figures.container.rotation.y} ${figures.container.rotation.z} XYZ`"
           ></vgl-mesh>
            <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="boxMesh"
             geometry="boxX"
             cast-shadow receive-shadow
@@ -227,7 +304,7 @@
             :rotation="`${figures.container.rotation.x} ${figures.container.rotation.y} ${figures.container.rotation.z} XYZ`"
           ></vgl-mesh>
           <vgl-mesh
-            material="mat"
+            material="matRed"
             name="boxMesh"
             geometry="boxX"
             cast-shadow receive-shadow
@@ -235,7 +312,7 @@
             :rotation="`${figures.container.rotation.x} ${figures.container.rotation.y} ${figures.container.rotation.z} XYZ`"
           ></vgl-mesh>
            <vgl-mesh
-            material="mat"
+            material="matGlass"
             name="boxMesh"
             geometry="boxX"
             cast-shadow receive-shadow
@@ -430,6 +507,7 @@
 import {
   VglAmbientLight,
   VglMesh,
+  VglTexture,
   VglMeshPhongMaterial,
   VglMeshStandardMaterial,
   VglPerspectiveCamera,
@@ -449,6 +527,7 @@ export default {
   name: 'Lr3',
   components: {
     VglAmbientLight,
+    VglTexture,
     VglMeshStandardMaterial,
     VglSpotLight,
     VglRenderer,
